@@ -4,12 +4,11 @@ import styled from 'styled-components/native'
 
 
 export const Container = styled.View`
-
+    position: relative;
     border-radius: 24px;
-    border-top-right-radius: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     align-self: stretch;
-    margin-left: 16px;
-    margin-right: 32px;
     margin-bottom: 24px;
     height: 120px
     background: #fff;
@@ -21,7 +20,7 @@ export const Header = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
 
 `
 
@@ -31,16 +30,27 @@ export const Title = styled.Text`
 
 `
 
-export const Date = styled.Text`
-    font-size: 12px;
+export const Tag =  styled.Text`
+    font-size: 9px
     font-family: Comfortaa-Bold;
+    color: #999999
+    border: 1px solid #999999;
+    border-radius: 24px;
+    padding: 0 10px;
+
+
+`
+
+export const Date = styled.Text`
+    font-size: 9px;
+    font-family: Comfortaa-Bold;
+    color: #999999;
 
 `
 
 export const Text = styled.Text`
-    font-size: 11px;
+    font-size: 12px;
     font-family: Comfortaa-Regular;
-    margin-bottom: 5px;
 
 `
 
@@ -62,19 +72,22 @@ export const ProgressText = styled.Text`
 `
 
 export const ProgressBar = styled.View`
-    align-self: stretch;
-    height: 4px;
-    background: #f7f7f7;
-    border-radius: 24px;
+    position: absolute;
+    width: 4px;
+    height: 120px
+    background: #DDDDDD;
+    bottom: 0px;
+    right: 0px;
 
 
 `
 
 export const Progress = styled.View`
-    width: 300px;
-    height: 4px;
+    position: absolute;
+    width: 4px;
+    height: 80px
     background: #66E599;
-    border-radius: 24px;
-
+    bottom: 0px;
+    right: 0px;
 
 `

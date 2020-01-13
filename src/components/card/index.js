@@ -5,7 +5,7 @@ import {
     Container,
     Header,
     Title,
-    Indicator,
+    Tag,
     Date,
     Text,
     ProgressBar,
@@ -17,28 +17,51 @@ import {
 export const Card = props => {
 
 
-
-    return (
-        <Container>
+    const renderDefaultCard = () => (
+        <>
             <Header>
 
-                <Title>Fazer Compras</Title>
+                <Tag>Fazer Compras</Tag>
 
-                <Indicator />
+                <Date>14 de março, 2020</Date>
             
             </Header>
 
-            <Text>Data final:  <Date>14 de março, 2020</Date></Text>
+            <Text>
+                Olá, isso é uma tarefa, continue lendo, a-b-c, olá isso nao é uma tarefa, 1 2 3
+            </Text>
 
+        </>
+    )
 
-            <ProgressText>28/30</ProgressText>
+    const renderGoalCard = () => (
+        <>
+            <Header>
+
+                <Tag>Compras</Tag>
+
+                <Date>20/30</Date>
+            
+            </Header>
+
+            <Text>
+                Olá, isso é uma tarefa, continue lendo, a-b-c, olá isso nao é uma tarefa, 1 2 3
+            </Text>
 
             <ProgressBar>
-
                 <Progress />
-
-
             </ProgressBar>
+
+        </>
+    )
+
+
+
+    return (
+        <Container>
+            {
+                (props.goals) ? renderGoalCard() : renderDefaultCard()
+            }
 
         </Container>
     )

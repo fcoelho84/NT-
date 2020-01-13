@@ -160,22 +160,23 @@ export const HomePage = props => {
 
 
 
-            <AnimatedCard 
-                toggleCalendar={ toggleCalendar } 
-                children={ () => (
-                    <ListCardContainer>
+            <AnimatedCard toggleCalendar={ toggleCalendar } >
 
-                        <FlatList
-                            data={array}
-                            renderItem={() => <Card />}
-                            keyExtractor={ (index) => index } 
-                            showsHorizontalScrollIndicator={false}
-                        />
+            
+                <ListCardContainer>
 
-                    </ListCardContainer>
-                ) } 
-            />
+                    <FlatList
+                        data={array}
+                        renderItem={() => <Card />}
+                        keyExtractor={ (index) => index } 
+                        showsHorizontalScrollIndicator={false}
+                    />
+                    
 
+                </ListCardContainer>
+          
+
+            </AnimatedCard>
 
         </Container>
     )

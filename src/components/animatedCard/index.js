@@ -127,7 +127,7 @@ export const AnimatedCard = props => {
 
         <Body>
 
-            { props.children() }
+            { props.children }
 
         </Body>
 
