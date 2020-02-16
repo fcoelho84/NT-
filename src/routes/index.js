@@ -1,24 +1,23 @@
-import { createStackNavigator } from 'react-navigation-stack'
 
-import { Home } from '../screens/home'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+
+import { TabBar } from '../components'
+
+import List from '../screens/home'
+
+import Plus from '../screens/home'
+
+import Search from '../screens/home'
 
 
-const routesList = {
-    Home
-}
 
-const routesConfig = {
-    defaultNavigationOptions: {
-        cardStyle: { backgroundColor: '#FFFFFF' },
-        headerStyle: {
-            elevation: 0,
-            height: 60,
-        },
-        headerTitleStyle: {
-            fontFamily: 'Montserrat-Regular',
-            fontSize: 24,
-        }
-    }
-}
 
-export default Routes = createStackNavigator(routesList, routesConfig);
+export default createBottomTabNavigator({
+    List,
+    Plus,
+    Search,
+}, { 
+    tabBarComponent: TabBar, 
+    initialRouteName: 'List'
+    
+ })
