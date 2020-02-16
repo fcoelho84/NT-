@@ -67,12 +67,14 @@ export const TabBar = ({navigation}) => {
     })
 
 
-    const changeSelectedCurvePosition = newIndex => baseAnim(position, newIndex, 400).start()
+    const changeSelectedCurvePosition = newIndex => baseAnim(position, newIndex, 550).start()
         
 
     const handlerSelected = index => {
 
         setIndex(index)
+
+        changeSelectedCurvePosition(index)
 
         const baseFABAnim = value => baseAnim(FABTranslate, value, 250)
 
