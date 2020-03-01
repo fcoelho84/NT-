@@ -10,6 +10,8 @@ const AppContainer = createAppContainer(Routes);
 
 export default () => {
 
+  console.disableYellowBox = true
+
 
   return ( <AppContainer /> )
 }

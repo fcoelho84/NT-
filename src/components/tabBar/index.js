@@ -30,6 +30,8 @@ export const TabBar = ({navigation}) => {
 
     const [ index, setIndex ] = useState( 0 )
 
+    const [ animIsRunning , setAnimIsRunning ] = useState( false )
+
     const curvedHoverStyle = {
         transform: [
             { translateX: position.interpolate({
@@ -72,6 +74,10 @@ export const TabBar = ({navigation}) => {
 
     const handlerSelected = index => {
 
+        if(animIsRunning) return 
+
+        setAnimIsRunning(true)
+
         setIndex(index)
 
         changeSelectedCurvePosition(index)
@@ -82,7 +88,7 @@ export const TabBar = ({navigation}) => {
 
             setIcon((navigation.state.routes[index].key).toLowerCase())
 
-            baseFABAnim(0).start()
+            baseFABAnim(0).start( () => setAnimIsRunning(false) )
 
         })
 

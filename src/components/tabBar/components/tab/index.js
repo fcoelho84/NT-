@@ -2,6 +2,8 @@ import React from 'react'
 
 import Icon from 'react-native-vector-icons/Feather'
 
+import { withNavigation } from 'react-navigation' 
+
 import { 
     TouchableWithoutFeedback, 
     Animated
@@ -12,14 +14,22 @@ import {
 } from './styles'
 
 
-export const Tab = props => {
+export const TabComponent = props => {
 
-    const { handler, style, name } = props
+    const { handler, style, name, navigation } = props
 
     const AnimatedIcon = Animated.createAnimatedComponent(Icon)
 
+    const onPress = () => {
+
+        handler()
+
+        navigation.navigate(name.charAt(0).toUpperCase() + name.slice(1))
+        
+    }
+
     return (
-        <TouchableWithoutFeedback onPress={ handler }>
+        <TouchableWithoutFeedback onPress={ () => onPress() }>
             <TabContainer>
                 <AnimatedIcon 
                     style={ style } 
@@ -33,3 +43,5 @@ export const Tab = props => {
     )
 
 }
+
+export const Tab = withNavigation(TabComponent)

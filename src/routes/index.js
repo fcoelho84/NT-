@@ -5,9 +5,9 @@ import { TabBar } from '../components'
 
 import List from '../screens/home'
 
-import Plus from '../screens/home'
+import Plus from '../screens/add'
 
-import Search from '../screens/home'
+import Search from '../screens/search'
 
 
 
@@ -19,5 +19,4 @@ export default createBottomTabNavigator({
 }, { 
     tabBarComponent: TabBar, 
     initialRouteName: 'List'
-    
  })
