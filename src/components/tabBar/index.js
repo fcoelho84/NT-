@@ -112,13 +112,15 @@ export const TabBar = ({navigation}) => {
 
                 <Tabs>
 
-                    { navigation.state.routes.map( (_, currentIndex) => (
-                        <Tab 
-                            handler={ () => handlerSelected(currentIndex) }
-                            style={ (currentIndex === index) ? opacityStyle(0, 1) : null } 
-                            name={(navigation.state.routes[currentIndex].key).toLowerCase()}
-                        />
-                    )) }
+                    { 
+                        navigation.state.routes.map( (_, currentIndex) => (
+                            <Tab 
+                                handler={ () => handlerSelected(currentIndex) }
+                                style={ (currentIndex === index) ? opacityStyle(0, 1) : null } 
+                                name={(navigation.state.routes[currentIndex].key).toLowerCase()}
+                            />
+                        )) 
+                    }
 
                 </Tabs>
 
