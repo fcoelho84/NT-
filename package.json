@@ -14,7 +14,7 @@
     "flubber": "^0.4.2",
     "hoist-non-react-statics": "^3.3.1",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.76.2",
     "react-native-calendars": "^1.261.0",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "^1.7.0",
